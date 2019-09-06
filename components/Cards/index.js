@@ -35,7 +35,7 @@ function cardMaker (data){
     
     card.classList.add("card");
     headline.classList.add("headline");
-    author.classList.add("author");
+    authorContainer.classList.add("author");
     imgContainer.classList.add("img-container");
     
     img.src = data.authorPhoto;
@@ -56,8 +56,20 @@ axios
             arrayIndex.forEach(object =>{
                 cardContainer.append(cardMaker(object));
             })            
-        });
+        })
+        // This is an alternate way to do lines 53-59
+        // newArr = [];
+        //     for(x in allMyData){
+        //         newArr.push(allMyData[x])
+        //     }
+        //     console.log(newArr);//[Array(4), Array(3), Array(3), Array(3), Array(2)]
+        //     newArr.forEach(arrayIndex => {
+        //         arrayIndex.forEach(object =>{
+        //             cardContainer.append(cardMaker(object));
+        //         })            
+        //     });
     })
     .catch(error =>{
         console.log(`The data was not returned:`, error);
     });
+

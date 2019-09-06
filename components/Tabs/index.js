@@ -12,12 +12,13 @@ axios
 .get(`https://lambda-times-backend.herokuapp.com/topics`)
     .then(response =>{
         console.log(response);
-        newArr = [];
-        response.data.topics.map(arrItem => {
-            newArr.push(arrItem);
-        })
-        console.log(newArr);
-        newArr.forEach(arrItem =>{
+        // newArr = [];
+        // response.data.topics.map(arrItem => {
+        //     newArr.push(arrItem);
+        // })
+        // console.log(newArr);
+        // newArr.forEach(arrItem =>{
+        response.data.topics.forEach(arrItem =>{
             const tab = document.createElement("div");
             tab.classList.add("tab");
             tab.textContent = arrItem;
